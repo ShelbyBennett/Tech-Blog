@@ -1,0 +1,29 @@
+[
+    {
+        "id":1,
+        "title":"Hello World",
+        "content":"I love blogging about Javascript",
+        "user_id":1
+    },
+    {
+        "id":2,
+        "title":"What I love",
+        "content":"Examples",
+        "user_id":2
+    },
+    {
+        "id":3,
+        "title":"FlexBox vs CSS Grid",
+        "content":"Which one do your prefer?",
+        "user_id":3
+    },
+    {
+        "id":4,
+        "title":"For Loop",
+        "content":"Works great on arrays",
+        "user_id":4
+    }
+
+
+
+]
