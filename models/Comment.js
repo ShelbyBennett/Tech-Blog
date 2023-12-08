@@ -29,7 +29,7 @@ Comment.init({
     }
 },{
     sequelize,
-    modelName:'post'
+    modelName:'comment'
 })
 
 module.exports=Comment
