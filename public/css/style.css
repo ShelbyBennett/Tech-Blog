@@ -1,0 +1,11 @@
+body{
+    background-color: #100c08;
+    color:whitesmoke;
+}
+
+.navbar{
+    background-color: #100c08!important;
+}
+.navbar-brand a{
+color:whitesmoke!important;
+}
