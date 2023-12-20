@@ -14,6 +14,34 @@ router.get("/", async (req, res)=>{
     }
 });
 
+router.get('/post/:id', async (req,res)=>{
+    try {
+        const onePost= await Post.findByPk(req.params.id,{
+            include:[User, {model:Comment, include:[User]}]
+        })
+
+        const post = onePost.get({plain:true})
+         res.render('single-post', {post})
+    } catch (error) {
+        console.log(error);
+        res.status(500).json(error)
+    }
+})
+
+router.get('/login', (req,res)=>{
+    if(req.session.logged_in){
+        res.redirect('/dashboard')
+    }
+    res.render('login')
+})
+
+router.get('/signup', (req,res)=>{
+    if(req.session.logged_in){
+        res.redirect('/dashboard')
+    }
+    res.render('register')
+})
+
 
 
 module.exports=router;

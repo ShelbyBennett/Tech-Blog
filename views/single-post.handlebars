@@ -1,0 +1,47 @@
+<!---SUNGLE POST FROM HOME PAGE --->
+<div class="columns mt-6 ml-2">
+    <div class="column is-6 ml-2">
+<div class="card">
+    <header class="card-header">
+        <p class="card-header-title">
+            {{post.title}}
+        </p>
+    </header>
+    <div class="card-content">
+        <div class="content">
+           <p>{{post.content}}</p>
+           <p><small>Written by {{post.user.username}}</small></p>
+        </div>
+    </div>
+    <footer class="card-footer">
+       <p><small>{{ post.createdAt}}</small></p>
+    </footer>
+</div>
+</div>
+<div class="column is-6">
+    <div class="field is-flex justify-content-space-between">
+        <div class="field" style="width:30vw;">
+        <div class="label">Leave a comment</div>
+        <textarea name="comment" id="comment-area"  rows="4" class="textarea is-small"></textarea>
+        </div>
+        <button class="button is-primary-dark is-align-self-baseline"><i class="fa-solid fa-paper-plane"></i></button>
+    </div>
+</div>
+</div>
+
+
+<div class="column is-6 ml-2">
+    {{#if post.comments}}
+    {{#each post.comments}}
+    <article class="message">
+        <div class="message-header">
+            <p>{{user.username}}</p>
+        </div>
+        <div class="message-body">
+           <p>{{content}}</p>
+           <p><small>{{date_create}}</small></p>
+        </div>
+    </article>
+    {{/each}}
+    {{/if}}
+</div>
