@@ -1,0 +1,17 @@
+
+<div class="container">
+    {{#each posts}}
+    <div class="box">
+        <div class="content">
+            <h3 class="title has-text-centered">{{title}}</h3>
+            <p class="has-text-centered">{{user.username}}</p>
+            <p class="has-text-centered">{{createdAt}}</p>
+        </div>
+        <div class="content is-flex is-justify-content-flex-end">
+            <a href="/post/{{id}}">
+            <i class="fa-solid fa-angles-right fa-2xl"></i>
+            </a>
+        </div>
+    </div>
+    {{/each}}
+</div>

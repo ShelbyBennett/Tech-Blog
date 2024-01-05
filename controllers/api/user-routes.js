@@ -2,7 +2,7 @@ const router= require("express").Router()
 const{ User }=require("../../models")
 
 router.post("/", async (req, res)=>{
-    console.log(req.body, "router hit");
+    
     try {
         const newUser = await User.create(req.body)
 
@@ -12,6 +12,7 @@ router.post("/", async (req, res)=>{
             req.session.logged_in=true;
         })
         res.json(newUser)
+        console.log(newUser);
     } catch (error) {
         console.log(error);
         res.status(500).json(error)
@@ -19,6 +20,7 @@ router.post("/", async (req, res)=>{
 })
 
 router.post("/login", async (req,res)=>{
+    console.log(req.body, "router hit");
     try {
         const user =await User.findOne({
             where:{

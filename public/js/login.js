@@ -14,6 +14,7 @@ const loginHandler= async(e)=>{
     })
 
     if(response.ok){
+        console.log("response 200");
         document.location.replace('/dashboard')
     }else{
         alert('Failed to Login')
